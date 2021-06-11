@@ -18,6 +18,8 @@ a {
 $clr-deg1 : #DB8428;
 $clr-deg2 : #8F5BFE;
 
+$rad : 5px;
+
 
 
 .header {
@@ -76,12 +78,18 @@ $clr-deg2 : #8F5BFE;
 
 main {
     background: white;
-    width: 65%;
+    width: 70%;
     margin: auto;
 
+    border-top-left-radius: $rad $rad;
+    border-top-right-radius: $rad $rad;
 
-    border-top-left-radius: 15px 15px;
-    border-top-right-radius: 15px 15px;
+    h1 {
+        font-size: 1.5em;
+        color: $clr-deg1;
+        width: 100%;
+        text-align: center;        
+    }
 }
 
 .main__index {
@@ -90,8 +98,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-
-
 }
 
 .template{
@@ -103,21 +109,21 @@ main {
 }
 
 .bloc {
-    margin: 10px;
+    margin: 20px;
     text-align: center;
-    border-radius: 15px 15px;
+    border-radius: $rad $rad;
     box-shadow: rgba(109, 109, 109, 0.521) 1px 1px 9px;
     position: relative;
     z-index: 1;
     transition: all 0.3s;
 
 
-    padding: 7px;
+    padding: 3px;
 
     &::after{
         opacity: 0;
         transition: all 0.3s;
-        border-radius: 15px 15px;
+        border-radius: $rad $rad;
 
         content: ""; 
         position: absolute;
@@ -139,8 +145,8 @@ main {
         }
     }
     &__image {
-        width: 300px;
-        height: 250px;
+        width: 500px;
+        height: 300px;
         position: relative;
 
         img {
@@ -148,8 +154,8 @@ main {
             height: 100%;
             object-fit: cover;
 
-            border-top-left-radius: 15px 15px;
-            border-top-right-radius: 15px 15px;
+            border-top-left-radius: $rad $rad;
+            border-top-right-radius: $rad $rad;
         }
 
     }
@@ -171,4 +177,10 @@ main {
 
 footer {
     height: 300px;
+}
+
+@media screen and (max-width: 1500px) {
+    main {
+        width : 80%;
+    }
 }
