@@ -11,17 +11,28 @@ async function main() {
     
     
     for (i = 0; i < articles.length; i++) {
-        let cloneTemplate = template.cloneNode(true) //je clone la div
+
         let image = articles[i].imageUrl
-     
-        document.getElementById("articleTitre").innerText = articles[i].name + i           
-        document.getElementById("articlePrix").innerText = normPrice(articles[i].price)
-        document.getElementById("articleImg").innerHTML = '<img src="' + image + '" alt="">'
+        let nom = articles[i].name + i           
+        let prix = normPrice(articles[i].price)
         
-        
-        main.appendChild(cloneTemplate) //je le crée dans l'html
-        template.classList.add("display")      
+    
+        main.innerHTML += `
+        <a href="article.html" onclick="setLid(${i})" id="templateArticle">
+        <div class="bloc">
+            <div class="bloc__image" id="articleImg"><img src="${image}" alt=""></div>
+
+            <div class="bloc__titre" id="articleTitre">
+                <p>${nom}</p>
+            </div>
+
+            <div class="bloc__prix" id="articlePrix">
+                <p>${prix}</p>
+            </div>
+        </div>
+        </a>`
     }
+
 
     function normPrice(bigPrice) { //Pour mettre un espace dans le prix
 
@@ -41,6 +52,10 @@ async function main() {
 
 
 //------------------------------- FONCTIONS ------------------------------------------//
+function setLid(i){
+    console.log(i)
+    localStorage.setItem('itemId', i)
+}
 
 async function getArticles() {
     return fetch("http://localhost:3000/api/cameras")

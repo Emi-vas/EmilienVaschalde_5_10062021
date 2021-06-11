@@ -44,12 +44,14 @@ main {
   background: white;
   width: 65%;
   margin: auto;
+  border-top-left-radius: 15px 15px;
+  border-top-right-radius: 15px 15px; }
+
+.main__index {
   padding: 15px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  border-top-left-radius: 15px 15px;
-  border-top-right-radius: 15px 15px; }
+  justify-content: space-around; }
 
 .template {
   display: none; }
