@@ -11,13 +11,27 @@ async function main() {
     
     
     for (i = 0; i < articles.length; i++) {
-        let clone = document.importNode(template, true) //je clone la div
+        let cloneTemplate = template.cloneNode(true) //je clone la div
+     
+        document.getElementById("articleTitre").innerText = articles[i].name + i           
+        document.getElementById("articlePrix").innerText = normPrice(articles[i].price)
         
+        
+        main.appendChild(cloneTemplate) //je le crée dans l'html
+        template.classList.add("display")      
+    }
 
-        main.appendChild(clone) //je le crée dans l'html
-        document.getElementById("articleTitre").innerText = articles[i].name + i
-        template.classList.add("display")
-        
+    function normPrice(bigPrice) { //Pour mettre un espace dans le prix
+
+        if (bigPrice < 1000) {
+            return bigPrice
+        } else if (bigPrice <1000000) {
+            let arg1 = Math.trunc(bigPrice / 1000)  // 8
+            let arg2 = bigPrice - arg1 * 1000 
+            return arg1 + " " + arg2 + " €"
+        } else {
+            return "Soyons serieux"
+        }
     }
 
 
