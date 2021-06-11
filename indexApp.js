@@ -12,9 +12,11 @@ async function main() {
     
     for (i = 0; i < articles.length; i++) {
         let cloneTemplate = template.cloneNode(true) //je clone la div
+        let image = articles[i].imageUrl
      
         document.getElementById("articleTitre").innerText = articles[i].name + i           
         document.getElementById("articlePrix").innerText = normPrice(articles[i].price)
+        document.getElementById("articleImg").innerHTML = '<img src="' + image + '" alt="">'
         
         
         main.appendChild(cloneTemplate) //je le crée dans l'html
