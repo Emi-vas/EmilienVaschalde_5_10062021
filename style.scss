@@ -153,6 +153,20 @@ main {
         }
 
     }
+
+    p {
+        margin: 10px 0;
+    }
+}
+
+
+.ariane {
+    font-size: 0.8em;
+    padding-left: 30px;
+    padding-top: 7px;
+    span {
+        color: $clr-deg2;
+    }
 }
 
 footer {

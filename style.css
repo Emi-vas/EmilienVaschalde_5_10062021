@@ -95,6 +95,15 @@ main {
       object-fit: cover;
       border-top-left-radius: 15px 15px;
       border-top-right-radius: 15px 15px; }
+  .bloc p {
+    margin: 10px 0; }
+
+.ariane {
+  font-size: 0.8em;
+  padding-left: 30px;
+  padding-top: 7px; }
+  .ariane span {
+    color: #8F5BFE; }
 
 footer {
   height: 300px; }

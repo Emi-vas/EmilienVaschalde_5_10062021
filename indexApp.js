@@ -13,7 +13,7 @@ async function main() {
     for (i = 0; i < articles.length; i++) {
 
         let image = articles[i].imageUrl
-        let nom = articles[i].name + i           
+        let nom = articles[i].name      
         let prix = normPrice(articles[i].price)
         
     
