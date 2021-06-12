@@ -48,6 +48,8 @@ main {
     width: 100%;
     display: flex;
     justify-content: center; }
+    main .titre--article h1 {
+      color: black; }
   main h1 {
     font-size: 1.7em;
     text-align: center;
@@ -136,6 +138,21 @@ main {
   justify-content: space-around; }
   .blocArticle__desc {
     width: 45%; }
+    .blocArticle__desc form {
+      font-size: 0.9em;
+      margin: 80px 0; }
+    .blocArticle__desc .button {
+      border: none;
+      font-size: 1em;
+      padding: 5px 20px;
+      background: linear-gradient(to right, #DB8428, #8F5BFE);
+      color: white;
+      border-radius: 20px 20px;
+      cursor: pointer; }
+    .blocArticle__desc .button:hover {
+      box-shadow: rgba(98, 98, 98, 0.657) 2px 2px 7px; }
+    .blocArticle__desc .button:active {
+      box-shadow: none; }
 
 footer {
   height: 300px; }

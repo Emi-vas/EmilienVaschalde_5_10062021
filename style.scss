@@ -20,7 +20,15 @@ $clr-deg2 : #8F5BFE;
 
 $rad : 5px;
 
-
+@mixin button {
+    border: none;
+    font-size: 1em;
+    padding : 5px 20px;
+    background: linear-gradient(to right, $clr-deg1, $clr-deg2);
+    color: white;
+    border-radius: 20px 20px;
+    cursor: pointer;
+}
 
 .header {
     
@@ -85,6 +93,10 @@ main {
         width: 100%;
         display: flex;
         justify-content: center;
+
+        &--article {
+            h1 {color: black;}
+        }
     }
 
     h1 {
@@ -213,8 +225,26 @@ main {
     &__desc {
         width: 45%;
         
+        form {
+            font-size: 0.9em;
+            margin : 80px 0;
+        }
+
+        .button {
+            @include button;
+        }
+
+        .button:hover {
+            box-shadow: rgba(98, 98, 98, 0.657) 2px 2px 7px;
+        }
+        .button:active {
+            box-shadow: none;
+        }
+
     }
 }
+
+
 
 footer {
     height: 300px;
