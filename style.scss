@@ -81,19 +81,29 @@ main {
     width: 70%;
     margin: auto;
 
-    border-top-left-radius: $rad $rad;
-    border-top-right-radius: $rad $rad;
+    .titre {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 
     h1 {
-        font-size: 1.5em;
-        color: $clr-deg1;
-        width: 100%;
-        text-align: center;        
+        font-size: 1.7em;
+        text-align: center;    
+        
+        background-image: linear-gradient(to right, $clr-deg1, $clr-deg2);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;   
     }
 }
 
 .main__index {
     padding: 15px;
+
+
+    border-top-left-radius: $rad $rad;
+    border-top-right-radius: $rad $rad;
 
     display: flex;
     flex-wrap: wrap;
@@ -172,6 +182,37 @@ main {
     padding-top: 7px;
     span {
         color: $clr-deg2;
+    }
+}
+
+.imagArticle {
+    width: 45%;
+    height: 600px;
+    
+    box-shadow: rgba(85, 69, 69, 0.602) 3px 5px 9px;
+    border-radius: $rad $rad;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        border-radius: $rad $rad;
+    }
+
+    &--positionHirsh {
+        object-position: 12% 0%;
+    }
+}
+
+.blocArticle {
+    margin: 30px 10px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+
+    &__desc {
+        width: 45%;
+        
     }
 }
 
