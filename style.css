@@ -153,6 +153,10 @@ main {
       box-shadow: rgba(98, 98, 98, 0.657) 2px 2px 7px; }
     .blocArticle__desc .button:active {
       box-shadow: none; }
+    .blocArticle__desc .valid {
+      font-size: 0.8em;
+      color: #8F5BFE;
+      margin-top: 10px; }
 
 footer {
   height: 300px; }

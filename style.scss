@@ -241,8 +241,15 @@ main {
             box-shadow: none;
         }
 
+        .valid {
+            font-size: 0.8em;
+            color: $clr-deg2;
+            margin-top: 10px;
+        }
+
     }
 }
+
 
 
 

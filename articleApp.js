@@ -40,9 +40,12 @@ async function main() {
 
 
     //Acheter
-    
+    let qteArticle = 0
     document.getElementById("acheter").addEventListener("click", function() {
-        console.log("acheter")
+        qteArticle = qteArticle +1
+        console.log(qteArticle) // envoyer en local storage (idArticle, qteArticle)
+
+        document.getElementById("validation").innerText = "Article ajouté au panier"
     })
 
 }
