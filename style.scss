@@ -245,8 +245,26 @@ main {
             font-size: 0.8em;
             color: $clr-deg2;
             margin-top: 10px;
+            
+            a {
+                font-weight: bold;
+                color: $clr-deg2;
+            }
         }
 
+        select {
+            border: $clr-deg1 solid 2px;
+            font-size: 0.9em;
+            margin-left: 15px;
+        }
+
+        select:focus {
+            border: $clr-deg2 solid 2px;
+        }
+
+        select:target {
+            border: none;
+        }
     }
 }
 

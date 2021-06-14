@@ -157,6 +157,17 @@ main {
       font-size: 0.8em;
       color: #8F5BFE;
       margin-top: 10px; }
+      .blocArticle__desc .valid a {
+        font-weight: bold;
+        color: #8F5BFE; }
+    .blocArticle__desc select {
+      border: #DB8428 solid 2px;
+      font-size: 0.9em;
+      margin-left: 15px; }
+    .blocArticle__desc select:focus {
+      border: #8F5BFE solid 2px; }
+    .blocArticle__desc select:target {
+      border: none; }
 
 footer {
   height: 300px; }
