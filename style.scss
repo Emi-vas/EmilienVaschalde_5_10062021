@@ -108,6 +108,13 @@ main {
         &--article {
             h1 {color: black;}
         }
+
+        &--panier {
+            h1 {color: rgb(53, 53, 53);}
+
+            justify-content: left;
+            padding-left: 30px;
+        }
     }
 
     h1 {
@@ -279,8 +286,42 @@ main {
     }
 }
 
+//-------------------------------PANIER------------------------------------//
+.commande__ligne {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10px;
+    border-bottom: 1px solid rgba(163, 163, 163, 0.61);
+
+    &__qte {
+        display: flex;
+        align-items: center;
+    }
+}
+
+#plus, #moins {
+    padding: 3px 10px;
+    margin: 0 10px;
+    background: rgb(240, 240, 240);
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+#lentille {
+    color: rgb(98, 98, 98);
+    padding-left: 20px;
+    font-size: 0.9em;
+}
 
 
+
+
+
+
+
+
+//-------------------------------END PANier--------------------------------------//
 
 footer {
     height: 300px;

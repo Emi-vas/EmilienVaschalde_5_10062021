@@ -56,6 +56,11 @@ main {
     justify-content: center; }
     main .titre--article h1 {
       color: black; }
+    main .titre--panier {
+      justify-content: left;
+      padding-left: 30px; }
+      main .titre--panier h1 {
+        color: #353535; }
   main h1 {
     font-size: 1.7em;
     text-align: center;
@@ -174,6 +179,27 @@ main {
       border: #8F5BFE solid 2px; }
     .blocArticle__desc select:target {
       border: none; }
+
+.commande__ligne {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 10px;
+  border-bottom: 1px solid rgba(163, 163, 163, 0.61); }
+  .commande__ligne__qte {
+    display: flex;
+    align-items: center; }
+
+#plus, #moins {
+  padding: 3px 10px;
+  margin: 0 10px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  cursor: pointer; }
+
+#lentille {
+  color: #626262;
+  padding-left: 20px;
+  font-size: 0.9em; }
 
 footer {
   height: 300px; }

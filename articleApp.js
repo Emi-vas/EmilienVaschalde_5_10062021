@@ -40,10 +40,18 @@ async function main() {
 
 
     //Acheter
-    let qteArticle = 0
     document.getElementById("acheter").addEventListener("click", function() {
-        qteArticle = qteArticle +1
-        console.log(qteArticle) // envoyer en local storage (idArticle, qteArticle)
+        let nbArticle = localStorage.getItem(articleId)
+        if ( nbArticle == null) {
+            console.log("Il n'y avait pas d'article " + nbArticle)
+            nbArticle = 1
+            console.log(nbArticle)
+            localStorage.setItem(articleId, nbArticle)
+        } else {
+            nbArticle = parseInt(nbArticle) + 1
+            localStorage.setItem(articleId, nbArticle)
+            console.log(nbArticle)
+        }
 
         document.getElementById("validation").innerHTML = `Article ajouté au <a href="panier.html">panier</a>`
     })

@@ -53,7 +53,6 @@ async function main() {
 
 //------------------------------- FONCTIONS ------------------------------------------//
 function setLid(i){
-    console.log(i)
     localStorage.setItem('itemId', i)
 }
 
