@@ -13,7 +13,6 @@ async function main() {
         console.log(qte)
 
         if (qte != null) {
-            qte = parseInt(qte)
 
             const titre = articles[i].name
             const prixBig = articles[i].price * qte
@@ -36,7 +35,7 @@ async function main() {
                 <p>${prix} €</p>
             </div>
 
-            <a href="panier.html" class="commande__ligne__del" onclick="clearStorage()">
+            <a href="panier.html" class="commande__ligne__del" onclick="clearLine(${i})">
                 <p id="del"><i class="far fa-trash-alt"></i></p>
             </a>
             </div>`
@@ -96,6 +95,10 @@ async function getArticles() {
 
 function clearStorage() {
     localStorage.clear()
+}
+
+function clearLine(i) {
+    localStorage.removeItem(i)
 }
 
 function plus(i) {
