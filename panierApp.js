@@ -2,12 +2,12 @@ main()
 
 async function main() {
     const articles = await getArticles()
-    const commandeHtml = await document.getElementById("commande")
     
     for (i = 0; i < articles.length; i++) {
         let qte = localStorage.getItem(i)
+        const commandeHtml = document.getElementById("commande")
 
-        if (qte != null && commandeHtml != null) {
+        if (qte != null) {
             const titre = articles[i].name
             const prixBig = articles[i].price * qte
             const prix = normPrice(prixBig)
@@ -19,9 +19,9 @@ async function main() {
             </div>
 
             <div class="commande__ligne__qte">
-                <div id="plus">+</div>
+                <a href="panier.html" onclick="plus(${i})" id="plus">+</a>
                 <div id="qte">${qte}</div>
-                <div id="moins">-</div>
+                <a href="panier.html" onclick="moins(${i})" id="moins">-</a>
             </div>
 
             <div class="commande__ligne__prix">
@@ -34,6 +34,7 @@ async function main() {
             </div>`
         }
     }
+
 
 
     function normPrice(bigPrice) { //Pour mettre un espace dans le prix
@@ -71,4 +72,21 @@ async function getArticles() {
 
 function clearStorage() {
     localStorage.clear()
+}
+
+function plus(i) {
+    let qte = localStorage.getItem(i)
+    qte++
+    localStorage.setItem(i, qte)
+}
+
+function moins(i) {
+    let qte = localStorage.getItem(i)
+    qte--
+    if (qte == 0) {
+        localStorage.removeItem(i)
+    }else {
+        localStorage.setItem(i, qte)
+    }
+    
 }
