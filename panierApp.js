@@ -1,15 +1,23 @@
-main()
+window.onload = function() {
+    main()
+}
+
 
 async function main() {
     const articles = await getArticles()
+    const commandeHtml =  document.getElementById("commande")
+
     
     for (i = 0; i < articles.length; i++) {
         let qte = localStorage.getItem(i)
-        const commandeHtml = document.getElementById("commande")
+        console.log(qte)
 
         if (qte != null) {
+            qte = parseInt(qte)
+
             const titre = articles[i].name
             const prixBig = articles[i].price * qte
+            console.log(prixBig)
             const prix = normPrice(prixBig)
 
             commandeHtml.innerHTML +=
@@ -44,9 +52,25 @@ async function main() {
         } else if (bigPrice <1000000) {
             let arg1 = Math.trunc(bigPrice / 1000)  // 8
             let arg2 = bigPrice - arg1 * 1000 
+            if (arg2 == 0) {
+                arg2 = "000"
+            }
             return arg1 + " " + arg2
         } else {
-            return "Soyons serieux"
+            let arg1 = Math.trunc(bigPrice / 1000000)  // 8
+            let argTemp = bigPrice - arg1 * 1000000
+            let arg2 = Math.trunc(argTemp / 1000)  // 8
+            let arg3 = bigPrice - arg1 * 1000000 - arg2 * 1000
+
+            if (arg2 == 0) {
+                arg2 = "000"
+            }
+
+            if (arg3 == 0) {
+                arg3 = "000"
+            }
+
+            return arg1 + " " + arg2 + " " + arg3
         }
     }
    
