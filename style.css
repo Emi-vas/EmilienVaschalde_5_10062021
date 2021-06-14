@@ -40,6 +40,12 @@ a {
     .header__nav--right:hover {
       color: #8F5BFE; }
 
+.header--panier__nav--left {
+  border-bottom: none; }
+.header--panier__nav--right {
+  border-bottom: #8F5BFE solid 2px;
+  transition: all 0.5s; }
+
 main {
   background: white;
   width: 70%;

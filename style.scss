@@ -81,6 +81,17 @@ $rad : 5px;
             color: $clr-deg2;  
         }
     }
+}
+
+.header--panier {
+    &__nav--left {
+        border-bottom: none;
+    }
+
+    &__nav--right {
+        border-bottom: $clr-deg2 solid 2px;
+        transition: all 0.5s;
+    }
 
 }
 

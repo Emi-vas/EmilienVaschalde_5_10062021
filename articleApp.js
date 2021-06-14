@@ -45,7 +45,7 @@ async function main() {
         qteArticle = qteArticle +1
         console.log(qteArticle) // envoyer en local storage (idArticle, qteArticle)
 
-        document.getElementById("validation").innerHTML = `Article ajouté au <a href="">panier</a>`
+        document.getElementById("validation").innerHTML = `Article ajouté au <a href="panier.html">panier</a>`
     })
 
 }
