@@ -41,16 +41,13 @@ async function main() {
 
     //Acheter
     document.getElementById("acheter").addEventListener("click", function() {
-        let nbArticle = localStorage.getItem(articleId)
-        if ( nbArticle == null) {
-            console.log("Il n'y avait pas d'article " + nbArticle)
-            nbArticle = 1
-            console.log(nbArticle)
-            localStorage.setItem(articleId, nbArticle)
+        let qte = localStorage.getItem(articleId)
+        if ( qte == null) {
+            qte = 1
+            localStorage.setItem(articleId, qte)
         } else {
-            nbArticle = parseInt(nbArticle) + 1
-            localStorage.setItem(articleId, nbArticle)
-            console.log(nbArticle)
+            qte = parseInt(qte) + 1
+            localStorage.setItem(articleId, qte)
         }
 
         document.getElementById("validation").innerHTML = `Article ajouté au <a href="panier.html">panier</a>`
