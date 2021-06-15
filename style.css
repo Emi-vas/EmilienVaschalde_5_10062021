@@ -160,7 +160,8 @@ main {
       background: linear-gradient(to right, #DB8428, #8F5BFE);
       color: white;
       border-radius: 20px 20px;
-      cursor: pointer; }
+      cursor: pointer;
+      margin-top: 50px; }
     .blocArticle__desc .button:hover {
       box-shadow: rgba(98, 98, 98, 0.657) 2px 2px 7px; }
     .blocArticle__desc .button:active {
@@ -178,8 +179,10 @@ main {
       margin-left: 15px; }
     .blocArticle__desc select:focus {
       border: #8F5BFE solid 2px; }
-    .blocArticle__desc select:target {
-      border: none; }
+
+#prix {
+  font-weight: bold;
+  font-size: 1.5em; }
 
 .bloc_acheter {
   display: flex;

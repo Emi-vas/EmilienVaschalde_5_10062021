@@ -13,8 +13,8 @@ async function main() {
 
         let image = articles[i].imageUrl
         let nom = articles[i].name      
-        let prix = normPrice(articles[i].price)
-        
+        let prix = articles[i].price / 100
+
     
         main.innerHTML += `
         <a href="article.html" onclick="setLid(${i})" id="templateArticle">
@@ -26,7 +26,7 @@ async function main() {
             </div>
 
             <div class="bloc__prix" id="articlePrix">
-                <p>${prix}</p>
+                <p>${prix} €</p>
             </div>
         </div>
         </a>`
@@ -37,20 +37,6 @@ async function main() {
         afficheQteArticle(qteArticle)
     }
     
-
-    //Pour mettre un espace dans le prix
-    function normPrice(bigPrice) { 
-
-        if (bigPrice < 1000) {
-            return bigPrice
-        } else if (bigPrice <1000000) {
-            let arg1 = Math.trunc(bigPrice / 1000)  // 8
-            let arg2 = bigPrice - arg1 * 1000 
-            return arg1 + " " + arg2 + " €"
-        } else {
-            return "Soyons serieux"
-        }
-    }
 }
 
 
