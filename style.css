@@ -180,6 +180,41 @@ main {
     .blocArticle__desc select:target {
       border: none; }
 
+.bloc_acheter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(251, 251, 251, 0.678); }
+
+.acheter {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 700px;
+  margin: auto;
+  background: white;
+  border: #777777 2px solid; }
+  .acheter__texte {
+    width: 100%;
+    color: #8F5BFE;
+    font-size: 1.3em;
+    text-align: center; }
+  .acheter__bouton {
+    width: 50%;
+    text-align: center; }
+    .acheter__bouton:hover {
+      color: white;
+      background: #8F5BFE;
+      cursor: pointer; }
+
+.displayNone {
+  display: none; }
+
 .commande__ligne {
   display: flex;
   justify-content: space-around;

@@ -1,8 +1,10 @@
-main()
+window.onload = function() {
+    main()
+}
 
-async function main() {
+function main() {
     
-    const articles = await getArticles() //on reccup les articles
+    const articles = getArticles() //on reccup les articles
     let articleId = localStorage.getItem('itemId')
 
     let nom = articles[articleId].name
@@ -50,7 +52,11 @@ async function main() {
             localStorage.setItem(articleId, qte)
         }
 
-        document.getElementById("validation").innerHTML = `Article ajouté au <a href="panier.html">panier</a>`
+        document.getElementById("validation").classList.remove("displayNone")
+    })
+
+    document.getElementById("closeValidation").addEventListener("click", function() {
+        document.getElementById("validation").classList.add("displayNone")
     })
 
 }
@@ -58,19 +64,10 @@ async function main() {
 
 
 
-async function getArticles() {
-    return fetch("http://localhost:3000/api/cameras")
-             .then(function(res) {
-                 if (res.ok) {
-                     return res.json();
-                 }
-             })
-             .then(function(value) {
-                 return value;
-             })
-             .catch(function(err) {
- 
-             });
+function getArticles() {
+    const articlesJson = localStorage.getItem('articles')
+    const articles = JSON.parse(articlesJson)
+    return articles
 } 
 
 

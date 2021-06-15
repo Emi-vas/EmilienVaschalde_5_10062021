@@ -286,6 +286,54 @@ main {
     }
 }
 
+.bloc_acheter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(251, 251, 251, 0.678);
+}
+
+.acheter {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    width: 700px;
+    margin: auto;
+
+    background: white;
+    border: rgb(119, 119, 119) 2px solid;
+
+    &__texte {
+        width: 100%;
+        color: $clr-deg2;
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    &__bouton {
+        width: 50%;
+        text-align: center;
+
+        &:hover {
+            color: white;
+            background: #8F5BFE;
+            cursor: pointer;
+        }
+    }
+}
+
+.displayNone {
+    display: none;
+}
+
 //-------------------------------PANIER------------------------------------//
 .commande__ligne {
     display: flex;

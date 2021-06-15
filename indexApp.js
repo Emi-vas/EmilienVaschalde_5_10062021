@@ -3,12 +3,9 @@ main()
 async function main() {
     
     const articles = await getArticles() //on reccup les articles
-    const main = document.getElementById("main")
-    const template = document.getElementById("templateArticle")
-
-    // let titre = articles[0].name
-
+    articlesStorage(articles) //met les article dans le Local Storage
     
+    const main = document.getElementById("main")
     
     for (i = 0; i < articles.length; i++) {
 
@@ -33,8 +30,8 @@ async function main() {
         </a>`
     }
 
-
-    function normPrice(bigPrice) { //Pour mettre un espace dans le prix
+    //Pour mettre un espace dans le prix
+    function normPrice(bigPrice) { 
 
         if (bigPrice < 1000) {
             return bigPrice
@@ -46,14 +43,17 @@ async function main() {
             return "Soyons serieux"
         }
     }
-
-
 }
 
 
 //------------------------------- FONCTIONS ------------------------------------------//
 function setLid(i){
     localStorage.setItem('itemId', i)
+}
+
+function articlesStorage(articles) {
+    let articlesJson = JSON.stringify(articles)
+    localStorage.setItem('articles', articlesJson)
 }
 
 async function getArticles() {
@@ -67,7 +67,7 @@ async function getArticles() {
                  return value;
              })
              .catch(function(err) {
- 
+                console.log("erreur lié au back")
              });
 } 
 
