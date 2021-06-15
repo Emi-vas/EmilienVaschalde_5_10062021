@@ -14,6 +14,8 @@ function main() {
     let lentilleTab = articles[articleId].lenses
     let lentilleHtml = makeLentilleHtml(lentilleTab)
 
+    let qteArticle = localStorage.getItem('qteArticle')
+
     document.getElementById("arianeArticle").innerText = nom
     document.getElementById("titre").innerText = nom
     document.getElementById("image").innerHTML = `<img src="${imageUrl}" id="imageAppareil" alt="Photo du ${nom}, appareil photo d'Orinoco">`
@@ -39,6 +41,11 @@ function main() {
         return html
     }
 
+    //on affiche si le panier était pas vide
+    if (qteArticle != null) {
+        afficheQteArticle(qteArticle)
+    }
+
 
 
     //Acheter
@@ -52,7 +59,18 @@ function main() {
             localStorage.setItem(articleId, qte)
         }
 
+        // bloc de validation
         document.getElementById("validation").classList.remove("displayNone")
+        
+        // qte panier
+        if (qteArticle == null) {
+            qteArticle = 1
+        } else {
+            qteArticle++
+        }
+        localStorage.setItem('qteArticle', qteArticle)
+        afficheQteArticle(qteArticle)
+
     })
 
     document.getElementById("closeValidation").addEventListener("click", function() {
@@ -70,6 +88,14 @@ function getArticles() {
     return articles
 } 
 
+function afficheQteArticle(qte) {
+    document.getElementById("qtePanier").innerText = ` (${qte})`
+
+    if (qte = 0) {
+        document.getElementById("qtePanier").innerText = ""
+        localStorage.removeItem("qteArticle")
+    }
+}
 
 
 

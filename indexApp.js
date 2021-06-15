@@ -4,6 +4,8 @@ async function main() {
     
     const articles = await getArticles() //on reccup les articles
     articlesStorage(articles) //met les article dans le Local Storage
+
+    let qteArticle = localStorage.getItem('qteArticle')
     
     const main = document.getElementById("main")
     
@@ -29,6 +31,12 @@ async function main() {
         </div>
         </a>`
     }
+
+    // affiche le nombre à coté de panier
+    if (qteArticle != null && qteArticle != 0) {
+        afficheQteArticle(qteArticle)
+    }
+    
 
     //Pour mettre un espace dans le prix
     function normPrice(bigPrice) { 
@@ -71,5 +79,12 @@ async function getArticles() {
              });
 } 
 
+function afficheQteArticle(qte) {
+    document.getElementById("qtePanier").innerText = ` (${qte})`
 
+    if (qte = 0) {
+        document.getElementById("qtePanier").innerText = ""
+        localStorage.removeItem("qteArticle")
+    }
+}
 

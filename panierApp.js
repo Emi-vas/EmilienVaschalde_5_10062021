@@ -88,6 +88,13 @@ function clearStorage() {
 }
 
 function clearLine(i) {
+    // on enlève la qte de cet article au nb d'article global
+    let qte = localStorage.getItem(i)
+    let qteArticle = localStorage.getItem('qteArticle')
+    qteArticle = qteArticle - qte
+    localStorage.setItem("qteArticle", qteArticle)
+
+    //on supprim l'article
     localStorage.removeItem(i)
 }
 
@@ -95,6 +102,10 @@ function plus(i) {
     let qte = localStorage.getItem(i)
     qte++
     localStorage.setItem(i, qte)
+
+    let qteArticle = localStorage.getItem('qteArticle')
+    qteArticle++
+    localStorage.setItem('qteArticle', qteArticle)
 }
 
 function moins(i) {
@@ -105,5 +116,8 @@ function moins(i) {
     }else {
         localStorage.setItem(i, qte)
     }
-    
+
+    let qteArticle = localStorage.getItem('qteArticle')
+    qteArticle--
+    localStorage.setItem('qteArticle', qteArticle)
 }
