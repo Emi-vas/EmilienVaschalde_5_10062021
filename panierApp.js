@@ -46,9 +46,6 @@ function affichePanier(panier) {
     }
 }
 
-function clearStorage() {
-    localStorage.clear()
-}
 
 function clearLine(i, qte) {
     // on enlève la qte de cet article au nb d'article global
@@ -58,7 +55,7 @@ function clearLine(i, qte) {
 
     //on supprim l'article
     let panier = getPanier()
-    panier.splice(i)
+    panier.splice(i, 1)
     setPanier(panier)
 }
 
@@ -78,7 +75,7 @@ function moins(i) {
     panier[i].qte --
 
     if (panier[i].qte == 0) {
-        panier.splice(i)
+        panier.splice(i, 1)
     }
     setPanier(panier)
 
