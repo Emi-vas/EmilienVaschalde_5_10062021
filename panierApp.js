@@ -63,9 +63,10 @@ function clearLine(i, qte) {
 }
 
 function plus(i) {
-    let qte = localStorage.getItem(i)
-    qte++
-    localStorage.setItem(i, qte)
+    let panier = getPanier()
+    panier[i].qte ++
+    setPanier(panier)
+    
 
     let qteArticle = localStorage.getItem('qteArticle')
     qteArticle++
@@ -73,13 +74,13 @@ function plus(i) {
 }
 
 function moins(i) {
-    let qte = localStorage.getItem(i)
-    qte--
-    if (qte == 0) {
-        localStorage.removeItem(i)
-    }else {
-        localStorage.setItem(i, qte)
+    let panier = getPanier()
+    panier[i].qte --
+
+    if (panier[i].qte == 0) {
+        panier.splice(i)
     }
+    setPanier(panier)
 
     let qteArticle = localStorage.getItem('qteArticle')
     qteArticle--
