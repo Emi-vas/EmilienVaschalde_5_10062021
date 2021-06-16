@@ -390,7 +390,14 @@ main {
 }
 
 
+.panier__total {
+    display: flex;
+    justify-content: flex-end;
 
+    margin-right: 20px;
+    font-size: 1.3em;
+    color: $clr-deg2;
+}
 
 
 

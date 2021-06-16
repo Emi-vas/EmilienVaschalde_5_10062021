@@ -6,20 +6,30 @@ window.onload = function() {
 function main() {
 
     let panier = localStorage.getItem("panier")
-    if (panier != null) {
-        panier = JSON.parse(panier)
+    panier = JSON.parse(panier)
+    
+
+    if (panier != null && panier.length >= 1) {
         affichePanier(panier)
+        //afficheBouton
+        
+    } else {
+        const commandeHtml =  document.getElementById("commande")
+        commandeHtml.innerText = "Panier vide"
     }
 }
 
 
 function affichePanier(panier) {
     const commandeHtml =  document.getElementById("commande")
+    let total = 0
     for (i in panier) {
         const titre = panier[i].nom
         let qte = panier[i].qte
         const prix = panier[i].prix * qte
         const lentille = panier[i].lentille
+
+        total = total + prix
 
         commandeHtml.innerHTML +=
         `<div class="commande__ligne">
@@ -42,7 +52,7 @@ function affichePanier(panier) {
         </a>
         </div>`
 
-
+        afficherTotal(total)
     }
 }
 
@@ -93,4 +103,8 @@ function getPanier() {
 function setPanier(panier) {
     panier = JSON.stringify(panier)
     localStorage.setItem("panier", panier)
+}
+
+function afficherTotal(total) {
+    document.getElementById("total").innerText = total
 }
