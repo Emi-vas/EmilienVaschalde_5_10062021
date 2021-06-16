@@ -13,8 +13,6 @@ function main() {
 }
 
 
-
-
 function affichePanier(panier) {
     const commandeHtml =  document.getElementById("commande")
     for (i in panier) {
@@ -39,10 +37,12 @@ function affichePanier(panier) {
             <p>${prix} €</p>
         </div>
 
-        <a href="panier.html" class="commande__ligne__del" onclick="clearLine(${i})">
+        <a href="panier.html" class="commande__ligne__del" onclick="clearLine(${i}, ${qte})">
             <p id="del"><i class="far fa-trash-alt"></i></p>
         </a>
         </div>`
+
+
     }
 }
 
@@ -50,15 +50,16 @@ function clearStorage() {
     localStorage.clear()
 }
 
-function clearLine(i) {
+function clearLine(i, qte) {
     // on enlève la qte de cet article au nb d'article global
-    let qte = localStorage.getItem(i)
     let qteArticle = localStorage.getItem('qteArticle')
     qteArticle = qteArticle - qte
     localStorage.setItem("qteArticle", qteArticle)
 
     //on supprim l'article
-    localStorage.removeItem(i)
+    let panier = getPanier()
+    panier.splice(i)
+    setPanier(panier)
 }
 
 function plus(i) {
@@ -83,4 +84,15 @@ function moins(i) {
     let qteArticle = localStorage.getItem('qteArticle')
     qteArticle--
     localStorage.setItem('qteArticle', qteArticle)
+}
+
+function getPanier() {
+    let panier = localStorage.getItem("panier")
+    panier = JSON.parse(panier)
+    return panier
+}
+
+function setPanier(panier) {
+    panier = JSON.stringify(panier)
+    localStorage.setItem("panier", panier)
 }
