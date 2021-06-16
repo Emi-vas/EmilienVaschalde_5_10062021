@@ -219,6 +219,10 @@ main {
 .displayNone {
   display: none; }
 
+.commande {
+  border-top: solid 1px #8F5BFE;
+  border-bottom: solid 1px #8F5BFE; }
+
 .commande__ligne {
   display: flex;
   justify-content: space-around;

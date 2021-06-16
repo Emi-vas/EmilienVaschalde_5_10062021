@@ -5,19 +5,19 @@ window.onload = function() {
 function main() {
     
     const articles = getArticles() //on reccup les articles
-    let articleId = localStorage.getItem('itemId')
+    let articleId = localStorage.getItem('itemId') //on reccup l'id dans le LS pour savoir quel article afficher
 
     let nom = articles[articleId].name
     let imageUrl = articles[articleId].imageUrl
     let description = articles[articleId].description
     let prix = articles[articleId].price / 100
     
-    let lentilleTab = articles[articleId].lenses
+    let lentilleTab = articles[articleId].lenses //on reccup le tableau des lentilles
     let lentilleHtml = makeLentilleHtml(lentilleTab)
 
     let qteArticle = localStorage.getItem('qteArticle')
 
-
+    // mise en place de l'HTML
     document.getElementById("arianeArticle").innerText = nom
     document.getElementById("titre").innerText = nom
     document.getElementById("image").innerHTML = `<img src="${imageUrl}" id="imageAppareil" alt="Photo du ${nom}, appareil photo d'Orinoco">`
@@ -37,6 +37,7 @@ function main() {
 
         let html = `<option value="">${tab[0]}</option>`
 
+        //on commence à i = 1 pck on déclare le 0 et le 1 dans la première boucle
         for (i=1 ; i < tab.length ; i++) {
             
             html = html + `<option value="${tab[i]}">${tab[i]}</option>`
@@ -68,7 +69,7 @@ function main() {
         }
         
         
-        let panierArticle = {
+        let panierArticle = {  // sera ajouter si il n'est pas déja présent dans le panier
             "nom" : nom,
             "lentille" : lentilleSelect,
             "qte" : 1,
@@ -79,8 +80,8 @@ function main() {
         
         
         for (i in panier) { //je check le panier
-            if (panier[i].nom == nom && panier[i].lentille == lentilleSelect) {
-                panier[i].qte ++
+            if (panier[i].nom == nom && panier[i].lentille == lentilleSelect) { //si il y a déjà le même article (nom + lentille)
+                panier[i].qte ++ 
                 push = 1
             }
         }
@@ -89,9 +90,9 @@ function main() {
             panier.push(panierArticle)
         }
         
-        panier = JSON.stringify(panier)
+        // On envoi le panier dans le LS
+        panier = JSON.stringify(panier) 
         localStorage.setItem('panier', panier)
-            console.log(panier)
 
         // bloc de validation
         document.getElementById("validation").classList.remove("displayNone")
@@ -106,6 +107,7 @@ function main() {
         afficheQteArticle(qteArticle)
     })
 
+    //On regarde si il click sur "Continuer mes achats"
     document.getElementById("closeValidation").addEventListener("click", function() {
         document.getElementById("validation").classList.add("displayNone")
     })
@@ -121,13 +123,9 @@ function getArticles() {
     return articles
 } 
 
+// fct necessaire pck appelée quand on clic sur acheter
 function afficheQteArticle(qte) {
     document.getElementById("qtePanier").innerText = ` (${qte})`
-
-    if (qte = 0) {
-        document.getElementById("qtePanier").innerText = ""
-        localStorage.removeItem("qteArticle")
-    }
 }
 
 
