@@ -345,7 +345,25 @@ main {
     padding: 0 10px;
     border-bottom: 1px solid rgba(163, 163, 163, 0.61);
 
+    &__titre {
+        width: 30%;
+        display: flex; //pour la lentille
+        flex-wrap: wrap;
+        align-items: baseline;
+    }
+
     &__qte {
+        display: flex;
+        align-items: center;
+    }
+
+    &__prix {
+        display: flex;
+        align-items: center;
+        width: 15%;
+    }
+
+    &__del {
         display: flex;
         align-items: center;
     }

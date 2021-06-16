@@ -23,8 +23,8 @@ function affichePanier(panier) {
 
         commandeHtml.innerHTML +=
         `<div class="commande__ligne">
-        <div>
-            <p id="titre">${titre}<span id="lentille">${lentille}</span> </p>
+        <div class="commande__ligne__titre">
+            <p id="titre">${titre}<div id="lentille">${lentille}</div> </p>
         </div>
 
         <div class="commande__ligne__qte">
