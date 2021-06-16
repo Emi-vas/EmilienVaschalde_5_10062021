@@ -3,7 +3,7 @@ main()
 async function main() {
     
     const articles = await getArticles() //on reccup les articles
-    articlesStorage(articles) //met les article dans le Local Storage
+    articlesStorage(articles) //met les articles dans le Local Storage
 
     let qteArticle = localStorage.getItem('qteArticle')
     
@@ -34,13 +34,14 @@ async function main() {
 
     // affiche le nombre à coté de panier
     if (qteArticle != null && qteArticle != 0) {
-        afficheQteArticle(qteArticle)
+        document.getElementById("qtePanier").innerText = ` (${qteArticle})`
     }
     
 }
 
 
 //------------------------------- FONCTIONS ------------------------------------------//
+// on envoi dans le LS l'indice de l'article sur lequel on a cliqué
 function setLid(i){
     localStorage.setItem('itemId', i)
 }
@@ -64,13 +65,3 @@ async function getArticles() {
                 console.log("erreur lié au back")
              });
 } 
-
-function afficheQteArticle(qte) {
-    document.getElementById("qtePanier").innerText = ` (${qte})`
-
-    if (qte = 0) {
-        document.getElementById("qtePanier").innerText = ""
-        localStorage.removeItem("qteArticle")
-    }
-}
-
