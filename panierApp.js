@@ -7,18 +7,44 @@ function main() {
 
     let panier = localStorage.getItem("panier")
     panier = JSON.parse(panier)
+
+    let etat = "panier"
     
 
     if (panier != null && panier.length >= 1) {
         affichePanier(panier)
-        //afficheBouton
+        afficheBouton("Valider le panier")
         
     } else {
         const commandeHtml =  document.getElementById("commande")
         commandeHtml.innerText = "Panier vide"
     }
+
+    //Ecoute le bouton valider
+    document.getElementById("panierButton").addEventListener("click", function() {
+        // si il clic sur valider on sort de l'etat panier pour passer dans l'état formulaire
+        if (etat == "panier") {
+            etat = "formulaire"
+
+            afficheBouton("Valider la commande")
+            afficheForm()
+            
+        }
+    })
+
 }
 
+function afficheForm() {
+    //efface le panier
+    document.getElementById("commande").classList.add("displayNone")
+}
+
+function afficheBouton(texteBouton) {
+    let button = document.getElementById("panierButton")
+
+    button.classList.remove("displayNone")
+    button.children[0].innerText = texteBouton
+}
 
 function affichePanier(panier) {
     const commandeHtml =  document.getElementById("commande")

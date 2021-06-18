@@ -334,9 +334,7 @@ main {
     }
 }
 
-.displayNone {
-    display: none;
-}
+
 
 //-------------------------------PANIER------------------------------------//
 
@@ -399,8 +397,57 @@ main {
     color: $clr-deg2;
 }
 
+.panier__button {
+    display: flex;
+    justify-content: flex-end;
 
 
+    button {
+        border: none;
+        font-size: 0.8em;
+        padding: 7px 10px;
+        border-radius: 2px;
+        margin-right: 10px;
+
+        color: white;
+        background: $clr-deg2;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        transition: all 0.5s;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: $clr-deg1;
+            z-index: -1;
+            border-radius: 15px 2px;
+
+            opacity: 0;
+            transform: scaleX(0);
+            transition: all 0.5s;
+        }
+
+        &:hover {
+            border-radius: 15px 2px;
+            &::after {
+                opacity: 1;
+                transform: scaleX(1);
+
+            }
+        }
+
+    }
+    
+}
+
+.main--panier {
+    padding-bottom: 30px;
+}
 
 
 //-------------------------------END PANier--------------------------------------//
@@ -413,4 +460,8 @@ footer {
     main {
         width : 80%;
     }
+}
+
+.displayNone {
+    display: none;
 }
