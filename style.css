@@ -274,7 +274,7 @@ main {
     cursor: pointer;
     position: relative;
     z-index: 1;
-    transition: all 0.5s; }
+    transition: opacity 0.5s, transform 1s, border-radius 0.5s; }
     .panier__button button::after {
       content: "";
       position: absolute;
@@ -287,7 +287,7 @@ main {
       border-radius: 15px 2px;
       opacity: 0;
       transform: scaleX(0);
-      transition: all 0.5s; }
+      transition: opacity 0.5s, transform 1s, border-radius 0.5s; }
     .panier__button button:hover {
       border-radius: 15px 2px; }
       .panier__button button:hover::after {
@@ -297,18 +297,38 @@ main {
 .main--panier {
   padding-bottom: 30px; }
 
-.panier__retour {
+.formulaire__bouton {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: #555454;
   font-size: 0.8em; }
-  .panier__retour__click {
+  .formulaire__bouton__click {
     display: flex;
     align-items: center;
-    cursor: pointer; }
-  .panier__retour i {
+    cursor: pointer;
+    color: #555454; }
+    .formulaire__bouton__click:hover {
+      color: #8F5BFE; }
+  .formulaire__bouton i {
     padding: 0 10px; }
+
+.formulaire {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .formulaire__bloc {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0; }
+  .formulaire input {
+    font-size: 0.9em;
+    padding: 7px;
+    border-radius: 15px;
+    border: #8F5BFE 2px solid; }
+  .formulaire input:focus {
+    border: none; }
+  .formulaire input:valid {
+    border-color: #27a700; }
 
 footer {
   height: 300px; }

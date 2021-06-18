@@ -28,12 +28,42 @@
         </div>
 
         <!----------------------------- bloc formulaire -------------------------------->
-        <div class="panier__retour displayNone">
-            <a href="panier.html" class="panier__retour__click" id="retourClick">
-                <i class="fas fa-undo-alt panier__retour--click"></i>
-                <p class="panier__retour--click">Retour</p>
-            </a>
-        </div>
+        
+
+        <form action="" class="formulaire">
+            <div class="formulaire__bloc">
+                <label for="firstName">Prénom</label>
+                <input type="text" name="firstName" id="firstName" required placeholder="John">
+            </div>
+                  
+            <div class="formulaire__bloc">
+                <label for="lastName">Nom</label>
+                <input type="text" name="lastName" id="lastName" required placeholder="Doe">   
+            </div>
+            
+            <div class="formulaire__bloc">
+                <label for="adress">Adresse</label>
+                <input type="text" name="adress" id="adress" required placeholder="28 rue république">   
+            </div>
+            
+            <div class="formulaire__bloc">
+                <label for="city">Ville</label>
+                <input type="text" name="city" id="city" required placeholder="Lyon">
+            </div>
+            
+            <div class="formulaire__bloc">
+                <label for="email">email</label>
+                <input type="email" name="email" id="email" required placeholder="john_doe@gmail.com"> 
+            </div>
+
+            <div class="formulaire__bouton displayNone">
+                <a href="panier.html" class="formulaire__bouton__click" id="retourClick">
+                    <i class="fas fa-undo-alt formulaire__bouton--click"></i>
+                    <p class="formulaire__bouton--click">Retour</p>
+                </a>
+            </div>
+            
+        </form>
 
         <!----------------------------- END - bloc formulaire -------------------------------->
 
@@ -42,7 +72,7 @@
            
         </div>
 
-        <div class="panier__total">
+        <div class="panier__total" id="panierTotal">
             <p>Total : <span id="total"></span> €</p>
         </div>
 

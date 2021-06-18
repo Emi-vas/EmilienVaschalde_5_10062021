@@ -117,6 +117,7 @@ main {
 
             justify-content: left;
             padding-left: 30px;
+            
         }
     }
 
@@ -414,7 +415,7 @@ main {
         cursor: pointer;
         position: relative;
         z-index: 1;
-        transition: all 0.5s;
+        transition: opacity 0.5s, transform 1s, border-radius 0.5s;
 
         &::after {
             content: "";
@@ -429,7 +430,7 @@ main {
 
             opacity: 0;
             transform: scaleX(0);
-            transition: all 0.5s;
+            transition: opacity 0.5s, transform 1s, border-radius 0.5s;
         }
 
         &:hover {
@@ -449,17 +450,22 @@ main {
     padding-bottom: 30px;
 }
 
-.panier__retour {
+.formulaire__bouton {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    color: rgb(85, 84, 84);
+    
     font-size: 0.8em;
-     
+
     &__click {
         display: flex;
         align-items: center;
         cursor: pointer;
+        color: rgb(85, 84, 84);
+       
+        &:hover {
+            color: $clr-deg2;
+        }
     }
     
     i {
@@ -467,6 +473,33 @@ main {
     }
 }
 
+.formulaire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__bloc {
+        display: flex;
+        flex-direction: column;
+
+        margin: 15px 0;
+    }
+
+    input {
+        font-size: 0.9em;
+        padding: 7px;
+        border-radius: 15px;
+        border: $clr-deg2 2px solid;
+    }
+
+    input:focus {
+        border: none
+    }
+
+    input:valid {
+        border-color: rgb(39, 167, 0);
+    }
+}
 
 //-------------------------------END PANier--------------------------------------//
 

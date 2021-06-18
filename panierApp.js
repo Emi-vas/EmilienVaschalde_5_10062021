@@ -31,7 +31,8 @@ function main() {
         if (etat == "panier") {
             etat = "formulaire"
 
-            afficheBouton("Valider la commande") //on change le texte du bouton
+            document.getElementById("panierButton").classList.add("displayNone")
+            document.getElementById("panierTotal").classList.add("displayNone")
             afficheForm() //on affiche le formulaire
         }
     })
