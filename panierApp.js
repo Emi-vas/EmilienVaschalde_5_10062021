@@ -22,21 +22,27 @@ function main() {
 
     //Ecoute le bouton valider
     document.getElementById("panierButton").addEventListener("click", function() {
+        
+        if (etat == "formulaire") {
+            console.log("Validation de la commande")
+        }
+        
         // si il clic sur valider on sort de l'etat panier pour passer dans l'état formulaire
         if (etat == "panier") {
             etat = "formulaire"
 
-            afficheBouton("Valider la commande")
-            afficheForm()
-            
+            afficheBouton("Valider la commande") //on change le texte du bouton
+            afficheForm() //on affiche le formulaire
         }
     })
-
 }
 
 function afficheForm() {
     //efface le panier
     document.getElementById("commande").classList.add("displayNone")
+
+    //bouton retour
+    document.getElementById("retourClick").parentElement.classList.remove("displayNone")
 }
 
 function afficheBouton(texteBouton) {

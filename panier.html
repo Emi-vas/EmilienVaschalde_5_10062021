@@ -9,6 +9,7 @@
     <script src="panierApp.js"></script>
 
     <script src="https://kit.fontawesome.com/9e8c9aa232.js" crossorigin="anonymous"></script>
+    
 
     <title>Panier - Orinoco</title>
 </head>
@@ -18,13 +19,24 @@
         <a href="index.html" class="header__logo">
            <img src="images/logo_header.png" alt="Orinoco, boutique en ligne logo" >
         </a>
-        <a href="#" class="header__nav header__nav--right header--panier__nav--right"><p>Panier<span id="qtePanier"></span></p></a>
+        <a href="panier.html" class="header__nav header__nav--right header--panier__nav--right"><p>Panier<span id="qtePanier"></span></p></a>
     </header>
 
     <main class="main--panier">
         <div class="titre titre--panier">
             <h1>Mon Panier</h1>
         </div>
+
+        <!----------------------------- bloc formulaire -------------------------------->
+        <div class="panier__retour displayNone">
+            <a href="panier.html" class="panier__retour__click" id="retourClick">
+                <i class="fas fa-undo-alt panier__retour--click"></i>
+                <p class="panier__retour--click">Retour</p>
+            </a>
+        </div>
+
+        <!----------------------------- END - bloc formulaire -------------------------------->
+
 
         <div class="commande" id="commande">
            

@@ -8,7 +8,7 @@ html, body {
 
 a {
   text-decoration: none;
-  color: black; }
+  color: inherit; }
 
 .header {
   display: flex;
@@ -296,6 +296,19 @@ main {
 
 .main--panier {
   padding-bottom: 30px; }
+
+.panier__retour {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #555454;
+  font-size: 0.8em; }
+  .panier__retour__click {
+    display: flex;
+    align-items: center;
+    cursor: pointer; }
+  .panier__retour i {
+    padding: 0 10px; }
 
 footer {
   height: 300px; }
