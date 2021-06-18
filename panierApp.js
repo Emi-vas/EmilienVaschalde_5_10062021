@@ -31,8 +31,6 @@ function main() {
         if (etat == "panier") {
             etat = "formulaire"
 
-            document.getElementById("panierButton").classList.add("displayNone")
-            document.getElementById("panierTotal").classList.add("displayNone")
             afficheForm() //on affiche le formulaire
         }
     })
@@ -42,8 +40,17 @@ function afficheForm() {
     //efface le panier
     document.getElementById("commande").classList.add("displayNone")
 
+    //efface le bouton
+    document.getElementById("panierButton").classList.add("displayNone")
+
+    //met le prix au centre
+    document.getElementById("panierTotal").classList.add("flexCenter")
+
     //bouton retour
     document.getElementById("retourClick").parentElement.classList.remove("displayNone")
+
+    //affiche le formulaire
+    document.getElementById("form").classList.remove("displayNone")
 }
 
 function afficheBouton(texteBouton) {

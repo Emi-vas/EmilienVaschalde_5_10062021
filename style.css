@@ -306,9 +306,10 @@ main {
     display: flex;
     align-items: center;
     cursor: pointer;
-    color: #555454; }
+    color: #555454;
+    transition: all 0.3s; }
     .formulaire__bouton__click:hover {
-      color: #8F5BFE; }
+      color: #DB8428; }
   .formulaire__bouton i {
     padding: 0 10px; }
 
@@ -320,15 +321,29 @@ main {
     display: flex;
     flex-direction: column;
     margin: 15px 0; }
-  .formulaire input {
-    font-size: 0.9em;
+  .formulaire input[type=text], .formulaire input[type=email] {
+    font-size: 0.85em;
+    font-family: inherit;
     padding: 7px;
     border-radius: 15px;
     border: #8F5BFE 2px solid; }
   .formulaire input:focus {
     border: none; }
-  .formulaire input:valid {
+  .formulaire input[type=text]:valid, .formulaire input[type=email]:valid {
     border-color: #27a700; }
+  .formulaire input[type=submit] {
+    border: none;
+    font-size: 1.2em;
+    font-family: inherit;
+    background: inherit;
+    font-weight: bold;
+    color: #8F5BFE;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 30px;
+    transition: all 0.3s; }
+    .formulaire input[type=submit]:hover {
+      color: #DB8428; }
 
 footer {
   height: 300px; }
@@ -338,5 +353,9 @@ footer {
     width: 80%; } }
 .displayNone {
   display: none; }
+
+.flexCenter {
+  justify-content: center;
+  color: #252525; }
 
 /*# sourceMappingURL=style.css.map */
