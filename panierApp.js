@@ -7,8 +7,6 @@ function main() {
 
     let panier = localStorage.getItem("panier")
     panier = JSON.parse(panier)
-
-    let etat = "panier"
     
 
     if (panier != null && panier.length >= 1) {
@@ -24,6 +22,18 @@ function main() {
     document.getElementById("panierButton").addEventListener("click", function() {
         
         afficheForm() //on affiche le formulaire
+        verifForm()
+    })
+}
+
+function verifForm() {
+    
+    //verif prenom
+    const firstName = document.getElementById("firstName")
+    firstName.addEventListener("change", function() {
+        if (firstName.value == "e") {
+            firstName.classList.add("invalid")
+        }
     })
 }
 
@@ -48,7 +58,7 @@ function afficheBouton(texteBouton) {
     let button = document.getElementById("panierButton")
 
     button.classList.remove("displayNone")
-    button.children[0].innerText = texteBouton
+    button.children[0].innerText = texteBouton //button c'est la div le .children permet de cibler le boutton
 }
 
 function affichePanier(panier) {

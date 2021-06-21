@@ -327,7 +327,7 @@ main {
     display: flex;
     flex-direction: column;
     margin: 15px 0; }
-  .formulaire input[type=text], .formulaire input[type=email] {
+  .formulaire__vide {
     font-size: 0.85em;
     font-family: inherit;
     padding: 7px;
@@ -341,15 +341,19 @@ main {
     border: none;
     font-size: 1.2em;
     font-family: inherit;
-    background: inherit;
+    background: #8F5BFE;
     font-weight: bold;
-    color: #8F5BFE;
+    color: white;
     border-radius: 15px;
     cursor: pointer;
+    padding: 5px 10px;
     margin-left: 30px;
     transition: all 0.3s; }
     .formulaire input[type=submit]:hover {
-      color: #DB8428; }
+      background: #DB8428; }
+
+.invalid {
+  border-color: #ff4545; }
 
 footer {
   height: 300px; }
