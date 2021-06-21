@@ -10,6 +10,12 @@ a {
   text-decoration: none;
   color: inherit; }
 
+input:focus {
+  outline: none; }
+
+select:focus {
+  outline: none; }
+
 .header {
   display: flex;
   justify-content: center;
@@ -327,10 +333,10 @@ main {
     padding: 7px;
     border-radius: 15px;
     border: #8F5BFE 2px solid; }
-  .formulaire input:focus {
-    border: none; }
-  .formulaire input[type=text]:valid, .formulaire input[type=email]:valid {
+  .formulaire input[type=email]:valid {
     border-color: #27a700; }
+  .formulaire input[type=email]:focus:invalid {
+    border-color: #ff4545; }
   .formulaire input[type=submit] {
     border: none;
     font-size: 1.2em;

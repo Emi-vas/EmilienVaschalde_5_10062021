@@ -23,16 +23,7 @@ function main() {
     //Ecoute le bouton valider
     document.getElementById("panierButton").addEventListener("click", function() {
         
-        if (etat == "formulaire") {
-            console.log("Validation de la commande")
-        }
-        
-        // si il clic sur valider on sort de l'etat panier pour passer dans l'état formulaire
-        if (etat == "panier") {
-            etat = "formulaire"
-
-            afficheForm() //on affiche le formulaire
-        }
+        afficheForm() //on affiche le formulaire
     })
 }
 

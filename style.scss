@@ -15,6 +15,14 @@ a {
     color: inherit;
 }
 
+input:focus {
+    outline: none;
+}
+
+select:focus {
+    outline: none;
+}
+
 $clr-deg1 : #DB8428;
 $clr-deg2 : #8F5BFE;
 
@@ -495,12 +503,12 @@ main {
         border: $clr-deg2 2px solid;
     }
 
-    input:focus {
-        border: none
+    input[type=email]:valid {
+        border-color: rgb(39, 167, 0);
     }
 
-    input[type=text]:valid, input[type=email]:valid {
-        border-color: rgb(39, 167, 0);
+    input[type=email]:focus:invalid {
+        border-color: rgb(255, 69, 69);
     }
 
     input[type=submit] {
