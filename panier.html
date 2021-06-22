@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
+    
+    <script src="verifForm.js"></script>
     <script src="panierApp.js"></script>
 
     <script src="https://kit.fontawesome.com/9e8c9aa232.js" crossorigin="anonymous"></script>
@@ -34,16 +36,19 @@
             <div class="formulaire__bloc">
                 <label for="firstName">Prénom</label>
                 <input type="text" name="firstName" id="firstName" required placeholder="John" class="formulaire__vide">
+                <div class="formulaire__bloc__erreurTexte"></div>
             </div>
                   
             <div class="formulaire__bloc">
                 <label for="lastName">Nom</label>
-                <input type="text" name="lastName" id="lastName" required placeholder="Doe" class="formulaire__vide">   
+                <input type="text" name="lastName" id="lastName" required placeholder="Doe" class="formulaire__vide">  
+                <div class="formulaire__bloc__erreurTexte"></div> 
             </div>
             
             <div class="formulaire__bloc">
                 <label for="adress">Adresse</label>
-                <input type="text" name="adress" id="adress" required placeholder="28 rue république" class="formulaire__vide">   
+                <input type="text" name="adress" id="adress" required placeholder="28 rue république" class="formulaire__vide">  
+                <div class="formulaire__bloc__erreurTexte"></div>  
             </div>
             
             <div class="formulaire__bloc">

@@ -26,16 +26,6 @@ function main() {
     })
 }
 
-function verifForm() {
-    
-    //verif prenom
-    const firstName = document.getElementById("firstName")
-    firstName.addEventListener("change", function() {
-        if (firstName.value == "e") {
-            firstName.classList.add("invalid")
-        }
-    })
-}
 
 function afficheForm() {
     //efface le panier

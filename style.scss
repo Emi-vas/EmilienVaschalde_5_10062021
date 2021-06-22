@@ -493,6 +493,12 @@ main {
         flex-direction: column;
 
         margin: 15px 0;
+
+        &__erreurTexte {
+            font-size: 0.7em;
+            color: rgb(158, 4, 4);
+            padding: 7px;
+        }
     }
 
     &__vide {
@@ -532,8 +538,12 @@ main {
     }
 }
 
-.invalid {
+.invalide {
     border-color: rgb(255, 69, 69);
+}
+
+.valide {
+    border-color: rgb(0, 134, 0);
 }
 
 //-------------------------------END PANier--------------------------------------//

@@ -327,6 +327,10 @@ main {
     display: flex;
     flex-direction: column;
     margin: 15px 0; }
+    .formulaire__bloc__erreurTexte {
+      font-size: 0.7em;
+      color: #9e0404;
+      padding: 7px; }
   .formulaire__vide {
     font-size: 0.85em;
     font-family: inherit;
@@ -352,8 +356,11 @@ main {
     .formulaire input[type=submit]:hover {
       background: #DB8428; }
 
-.invalid {
+.invalide {
   border-color: #ff4545; }
+
+.valide {
+  border-color: #008600; }
 
 footer {
   height: 300px; }
